@@ -9,13 +9,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GS.DP.Facade", "GS.DP.Facad
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GS.DP.Common", "GS.DP.Common\GS.DP.Common.csproj", "{A3B0D3FA-16F4-4CED-87FA-A187A6194C0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GS.DP.Services", "GS.DP.Services\GS.DP.Services.csproj", "{D81DCD75-741D-4524-A5B0-CAB3DCD79B2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GS.DP.Services", "GS.DP.Services\GS.DP.Services.csproj", "{D81DCD75-741D-4524-A5B0-CAB3DCD79B2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GS.DP.Client", "GS.DP.Client\GS.DP.Client.csproj", "{EF7087B5-AA81-43F6-974A-622BC86DE076}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GS.DP.Client", "GS.DP.Client\GS.DP.Client.csproj", "{EF7087B5-AA81-43F6-974A-622BC86DE076}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GS.DP.Console", "GS.DP.Console\GS.DP.Console.csproj", "{6C0DBD83-A47E-46CF-80E5-53BEE0A235D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GS.DP.Console", "GS.DP.Console\GS.DP.Console.csproj", "{6C0DBD83-A47E-46CF-80E5-53BEE0A235D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GS.DP.TestApi", "GS.DP.TestApi\GS.DP.TestApi.csproj", "{BF612F4F-29C9-4B40-A237-4272060DA983}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GS.DP.TestApi", "GS.DP.TestApi\GS.DP.TestApi.csproj", "{BF612F4F-29C9-4B40-A237-4272060DA983}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{78A732EE-F870-474A-9F91-158FE5655D4D}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\nuget-publish.bat = ..\..\nuget-publish.bat
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

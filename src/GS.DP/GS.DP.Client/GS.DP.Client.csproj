@@ -11,6 +11,8 @@
     <Description>Document Provider Http Client</Description>
     <Copyright>© 2023 GRADUAL SYSTEMS, s.r.o.</Copyright>
     <RepositoryUrl>https://github.com/gradualsystems/doc-provider.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
