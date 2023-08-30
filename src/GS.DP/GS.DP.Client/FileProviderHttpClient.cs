@@ -47,4 +47,9 @@ public class FileProviderHttpClient : IFileProviderHttpClient
 
         return bytes;
     }
+
+    //public Task<string> UploadAsync(MultipartFormDataContent content)
+    //{
+        
+    //}
 }

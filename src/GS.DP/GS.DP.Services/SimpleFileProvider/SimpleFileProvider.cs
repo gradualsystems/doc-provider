@@ -163,8 +163,27 @@ public class SimpleFileProvider : IFileProvider
     //    return file;
     //}
 
-    public FileModel SaveFile(FileModel file)
+    public async Task<FileModel> SaveFile(FileModel file)
     {
-        throw new NotImplementedException();
+        if (file == null) return null;
+
+        string id = Guid.NewGuid().ToString();
+
+        string filename = id;
+
+        if(!string.IsNullOrEmpty(file.Extension))
+        {
+            string ext = file.Extension.Replace(".","");
+            filename = $"{filename}.{ext}";
+        }
+
+        var path = Path.Combine(directory.FullName, filename);
+
+        await File.WriteAllBytesAsync(path, file.Content);
+
+        file.Name = filename;
+        file.Id = id;
+
+        return file;
     }
 }

@@ -42,6 +42,13 @@ public class DocProviderFacade : IDocProviderFacade
         return model;
     }
 
+    public async Task<string> SaveFileAsync(FileModel file)
+    {
+        file = await _fileProvider.SaveFile(file);
+
+        return file.Id;
+    }
+
     //public async Task<FileModel> GetFileAsync(string id)
     //{
     //    FileModel model = new FileModel();

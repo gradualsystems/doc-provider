@@ -4,7 +4,7 @@ public interface IFileProvider
 {
     Task<FileModel> GetFile(FileModel file);
 
-    FileModel SaveFile(FileModel file);
+    Task<FileModel> SaveFile(FileModel file);
 
     //int CopyFile(ref string xml, out string errorXml);
 

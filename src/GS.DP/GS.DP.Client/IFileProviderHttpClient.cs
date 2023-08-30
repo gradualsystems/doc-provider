@@ -12,5 +12,5 @@ public interface IFileProviderHttpClient
 
     Task<byte[]> DownloadFileBytesAsync(string id);
 
-    //Task<List<FileDto>> UploadAsync(int id, MultipartFormDataContent content)
+    //Task<string> UploadAsync(MultipartFormDataContent content);
 }

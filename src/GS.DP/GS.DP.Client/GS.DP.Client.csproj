@@ -4,6 +4,13 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Version>1.0.0</Version>
+    <Company>GRADUAL SYSTEMS</Company>
+    <Authors>GRADUAL SYSTEMS</Authors>
+    <Product>CodePlant</Product>
+    <Description>Document Provider Http Client</Description>
+    <Copyright>© 2023 GRADUAL SYSTEMS, s.r.o.</Copyright>
+    <RepositoryUrl>https://github.com/gradualsystems/doc-provider.git</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

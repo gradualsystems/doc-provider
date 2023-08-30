@@ -23,34 +23,34 @@ public class FileController : ControllerBase
         return File(model.Content, model.MimeType);
     }
 
-    [HttpPost("Upload/{id}")]
-    public async Task<ActionResult<IEnumerable<FileModel>>> Upload(int id, [FromForm] IEnumerable<IFormFile> files)
+    [HttpPost()]
+    public async Task<ActionResult<string>> Upload([FromForm] IEnumerable<IFormFile> files)
     {
-        List<FileModel> list = new List<FileModel>();
+        if (files.Count() == 0) return BadRequest();
 
-        foreach (var file in files)
+        var file = files.FirstOrDefault();
+
+        if (file == null) return BadRequest();
+
+        if (file.Length == 0) return BadRequest();
+
+        FileModel model = new FileModel();
+        model.Name = file.FileName;
+        model.Extension = Path.GetExtension(file.FileName);
+        model.Size = file.Length;
+
+        using (var memoryStream = new System.IO.MemoryStream())
         {
-            FileModel model = new FileModel();
-            model.Name = file.FileName;
-            model.Size = file.Length;
+            await file.CopyToAsync(memoryStream);
 
-            if (file.Length > 0)
-            {
-                using (var memoryStream = new System.IO.MemoryStream())
-                {
-                    await file.CopyToAsync(memoryStream);
-
-                    //dto.Content = memoryStream.ToArray();
-
-                    //dto = await fileService.UploadAsync(id, dto);
-
-                }   
-            }
-
-            list.Add(model);
+            model.Content = memoryStream.ToArray();
         }
 
-        return Ok(list);
+        string id = await _facade.SaveFileAsync(model);
+
+        model.Id = id;
+
+        return Ok(model.Id);
     }
 
 }
