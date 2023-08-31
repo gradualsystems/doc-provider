@@ -17,8 +17,16 @@ public class TestController : ControllerBase
     [HttpGet]
     public async Task<ActionResult> GetAsync(string id)
     {
-        var result = await _testService.RunTestAsync(id);
+        var result = await _testService.RunDownloadAsync(id);
 
         return Ok(1);
+    }
+
+    [HttpPost]
+    public async Task<ActionResult> PostAsync()
+    {
+        var result = await _testService.RunUploadAsync();
+
+        return Ok(result);
     }
 }

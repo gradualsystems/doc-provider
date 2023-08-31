@@ -2,5 +2,7 @@
 
 public interface ITestService
 {
-    Task<int> RunTestAsync(string id);
+    Task<int> RunDownloadAsync(string id);
+
+    Task<string> RunUploadAsync();
 }

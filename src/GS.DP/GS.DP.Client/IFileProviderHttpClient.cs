@@ -12,5 +12,7 @@ public interface IFileProviderHttpClient
 
     Task<byte[]> DownloadFileBytesAsync(string id);
 
-    //Task<string> UploadAsync(MultipartFormDataContent content);
+    Task<string> UploadFileBytesAsync(string filename, byte[] bytes);
+
+    Task<string> UploadFileStreamAsync(string filename, Stream stream);
 }

@@ -24,11 +24,11 @@ public class FileController : ControllerBase
     }
 
     [HttpPost()]
-    public async Task<ActionResult<string>> Upload([FromForm] IEnumerable<IFormFile> files)
+    public async Task<ActionResult<string>> Upload([FromForm] IFormFile file)
     {
-        if (files.Count() == 0) return BadRequest();
+        //if (files.Count() == 0) return BadRequest();
 
-        var file = files.FirstOrDefault();
+        //var file = files.FirstOrDefault();
 
         if (file == null) return BadRequest();
 
