@@ -1,7 +1,6 @@
 using GS.DP.Common;
 using GS.DP.Facade;
 using GS.DP.Services;
-using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,8 +22,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy",
-        builder => builder
-        .SetIsOriginAllowed((host) => true)
+        corsPolicyBuilder => corsPolicyBuilder
+        .SetIsOriginAllowed((_) => true)
         .AllowAnyMethod()
         .AllowAnyHeader()
         .AllowCredentials());
