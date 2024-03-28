@@ -15,7 +15,7 @@ public class FileController : ControllerBase
         _facade = facade;
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("download/{id}")]
     public async Task<ActionResult> Download([FromRoute] string id)
     {
         var model = await _facade.GetFileAsync(id);
@@ -23,12 +23,12 @@ public class FileController : ControllerBase
         return File(model.Content, model.MimeType);
     }
 
-    [HttpPost()]
-    public async Task<ActionResult<string>> Upload([FromForm] IFormFile file)
+    [HttpPost("upload")]
+    public async Task<ActionResult<string>> Upload([FromForm] IEnumerable<IFormFile> files)
     {
-        //if (files.Count() == 0) return BadRequest();
+        if (files.Count() == 0) return BadRequest();
 
-        //var file = files.FirstOrDefault();
+        var file = files.FirstOrDefault();
 
         if (file == null) return BadRequest();
 

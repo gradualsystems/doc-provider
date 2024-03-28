@@ -20,6 +20,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{78A732EE-F870-474A-9F91-158FE5655D4D}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\nuget-publish.bat = ..\..\nuget-publish.bat
+		..\..\run.bat = ..\..\run.bat
 	EndProjectSection
 EndProject
 Global
