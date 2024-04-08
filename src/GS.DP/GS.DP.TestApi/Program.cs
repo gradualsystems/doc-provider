@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddHttpClient("GS.DP.Client", c =>
 {
-    c.BaseAddress = new Uri("https://localhost:7120");
+    c.BaseAddress = new Uri("https://localhost:7125");
 });
 
 builder.Services.AddTransient<IFileProviderHttpClient, FileProviderHttpClient>();

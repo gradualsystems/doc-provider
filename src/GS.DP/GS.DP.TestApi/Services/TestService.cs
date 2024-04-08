@@ -1,4 +1,5 @@
 ﻿using GS.DP.Client;
+using GS.DP.Client.Model;
 using System.Diagnostics;
 
 namespace GS.DP.TestApi.Services;
@@ -12,16 +13,23 @@ public class TestService : ITestService
         _httpClient = httpClient;
     }
 
-    public async Task<int> RunDownloadAsync(string id)
+    public async Task<byte[]> RunDownloadAsync(string id)
     {
         var result = await _httpClient.DownloadFileBytesAsync(id);
 
         string filename = Path.Combine(Path.GetTempPath(), id);
 
-        await File.WriteAllBytesAsync(filename, result);
+        //await File.WriteAllBytesAsync(filename, result);
 
-        return 1;
+        return result;
     }
+
+    //public async Task<IFileConent> DownloadContentAsync(string id)
+    //{
+    //    var result = await _httpClient.DownloadFileContentAsync(id);
+
+    //    return result;
+    //}
 
     //public async Task<string> RunUploadAsync()
     //{

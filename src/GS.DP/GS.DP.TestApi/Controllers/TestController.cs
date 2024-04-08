@@ -18,7 +18,9 @@ public class TestController : ControllerBase
     public async Task<ActionResult> GetAsync(string id)
     {
         var result = await _testService.RunDownloadAsync(id);
+        //var result = await _testService.DownloadContentAsync(id);
 
+        //return File(result.Content, result.ContentType, result.FileName);
         return Ok(1);
     }
 

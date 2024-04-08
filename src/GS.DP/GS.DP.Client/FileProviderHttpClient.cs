@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using GS.DP.Client.Model;
+using System.IO;
 using System.Net.Http.Headers;
 using System.Text;
 
@@ -19,7 +20,7 @@ public class FileProviderHttpClient : IFileProviderHttpClient
     {
         var httpClient = _httpClientFactory.CreateClient(ClientName);
 
-        var url = $"File/{id}";
+        var url = $"file/download/{id}";
 
         var requestMessage = new HttpRequestMessage(HttpMethod.Get, url);
 
@@ -36,7 +37,7 @@ public class FileProviderHttpClient : IFileProviderHttpClient
     {
         var httpClient = _httpClientFactory.CreateClient(ClientName);
 
-        var url = $"File/{id}";
+        var url = $"file/download/{id}";
 
         var requestMessage = new HttpRequestMessage(HttpMethod.Get, url);
 
@@ -49,11 +50,32 @@ public class FileProviderHttpClient : IFileProviderHttpClient
         return bytes;
     }
 
+    //public async Task<IFileConent> DownloadFileContentAsync(string id)
+    //{
+    //    var httpClient = _httpClientFactory.CreateClient(ClientName);
+
+    //    var url = $"file/download/{id}";
+
+    //    var requestMessage = new HttpRequestMessage(HttpMethod.Get, url);
+
+    //    var response = await httpClient.SendAsync(requestMessage);
+
+    //    response.EnsureSuccessStatusCode();
+
+    //    IFileConent file = new FileContent();
+
+    //    file.Content = await response.Content.ReadAsByteArrayAsync();
+
+    //    //file.FileName = response.Content.Headers.
+
+    //    return file;
+    //}
+
     public async Task<string> UploadFileBytesAsync(string filename, byte[] bytes)
     {
         var httpClient = _httpClientFactory.CreateClient(ClientName);
 
-        var url = $"File";
+        var url = $"file/upload";
 
         var requestMessage = new HttpRequestMessage(HttpMethod.Post, url);
 
@@ -80,7 +102,7 @@ public class FileProviderHttpClient : IFileProviderHttpClient
     {
         var httpClient = _httpClientFactory.CreateClient(ClientName);
 
-        var url = $"File";
+        var url = $"file/upload";
 
         var requestMessage = new HttpRequestMessage(HttpMethod.Post, url);
 
