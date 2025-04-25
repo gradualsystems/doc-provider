@@ -1,9 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Version>1.1.0</Version>
+    <Company>GRADUAL SYSTEMS</Company>
+    <Authors>GRADUAL SYSTEMS</Authors>
+    <Product>CodePlant</Product>
+    <Description>Document Provider Facade</Description>
+    <Copyright>© 2025 GRADUAL SYSTEMS, s.r.o.</Copyright>
+    <RepositoryUrl>https://github.com/gradualsystems/doc-provider.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
